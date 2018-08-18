@@ -3,6 +3,15 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "author": {
+    "name": "Tiago Rodrigo Calogero",
+    "email": "tiaguinhor@gmail.com",
+    "role": "Senior Full Stack Developer and Software Engineer",
+    "homepages": [
+      "http://curriculo.ogaiti.com.br",
+      "http://budget.ogaiti.com.br"
+    ]
+  },
   "jest": {
     "setupTestFrameworkScriptFile": "./tests/setup.js"
   },
@@ -13,7 +22,6 @@
     "test-unit": "nodemon --inspect --exec mocha --require ./tests/unit/helpers.js --opts ./tests/unit/mocha.opts ./tests/unit/models/**/*.js",
     "test": "jest"
   },
-  "author": "",
   "license": "ISC",
   "dependencies": {
     "babel": "^6.23.0",
