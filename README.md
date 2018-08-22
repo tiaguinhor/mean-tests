@@ -1,8 +1,8 @@
-# MEAN with tests
+# MEAN with tests [![Build Status](https://travis-ci.org/tiaguinhor/mean-with-tests.svg?branch=master)](https://travis-ci.org/tiaguinhor/mean-with-tests)  
 
 ## Installation/Deploy
 
-Download the latest versions of [NodeJS](https://nodejs.org/), [GitHub](https://github.com) e [MongoDB](https://www.mongodb.com/download-center)
+Download the latest versions of [NodeJS](https://nodejs.org/) and [GitHub](https://github.com)
 
 and after that run the command `npm install` to install dependencies of the project.
 
