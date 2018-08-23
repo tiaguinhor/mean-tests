@@ -34,7 +34,7 @@ module.exports = {
       return res.status(400).send(`No record with this id: ${req.params.id}`);
     }
 
-    User.update(req.params.id, req.body, (err, data) => {
+    User.updateNew(req.params.id, req.body, (err, data) => {
       responseData(req, res, err, data);
     });
   },

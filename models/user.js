@@ -25,7 +25,7 @@ userSchema.statics = {
 	// 	return this.create(data, cb);
 	// },
 
-	update(id, data, cb){
+	updateNew(id, data, cb){
 		return this.findByIdAndUpdate({ _id: id }, data, { new: true }, cb);
 	},
 
