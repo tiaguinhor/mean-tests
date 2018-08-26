@@ -1,5 +1,6 @@
 const ObjectId = require('mongoose').Types.ObjectId;
-const User = require('../models/user');
+const Category = require('../models/category');
+const Product = require('../models/product');
 
 const responseData = (req, res, err, data) => {
   if (!err) res.status(200).send(data);
@@ -7,8 +8,18 @@ const responseData = (req, res, err, data) => {
 };
 
 module.exports = {
+  genNewRegisters: (categories) => {
+    Category.remove().then(() => {
+      for (const cat of categories) {
+        Category.create({
+          title: cat,
+        });
+      }
+    });
+  },
+
   findAll: (req, res) => {
-    User.find((err, data) => {
+    Category.find((err, data) => {
       responseData(req, res, err, data);
     });
   },
@@ -18,13 +29,17 @@ module.exports = {
       return res.status(400).send(`No record with this id: ${req.params.id}`);
     }
 
-    User.findById(req.params.id, (err, data) => {
-      responseData(req, res, err, data);
+    Category.findById(req.params.id, (err, data) => {
+      if (err) return res.status(500).send(err);
+
+      Product.find({ 'category.title': data.title }, (err, products) => {
+        responseData(req, res, err, products);
+      });
     });
   },
 
   create: (req, res) => {
-    User.create(req.body, (err, data) => {
+    Category.create(req.body, (err, data) => {
       responseData(req, res, err, data);
     });
   },
@@ -34,7 +49,7 @@ module.exports = {
       return res.status(400).send(`No record with this id: ${req.params.id}`);
     }
 
-    User.updateNew(req.params.id, req.body, (err, data) => {
+    Category.updateNew(req.params.id, req.body, (err, data) => {
       responseData(req, res, err, data);
     });
   },
@@ -44,7 +59,7 @@ module.exports = {
       return res.status(400).send(`No record with this id: ${req.params.id}`);
     }
 
-    User.findByIdAndRemove(req.params.id, (err, data) => {
+    Category.findByIdAndRemove(req.params.id, (err, data) => {
       responseData(req, res, err, data);
     });
   },
