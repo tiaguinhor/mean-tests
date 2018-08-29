@@ -1,4 +1,4 @@
-# MEVN shopping cart with tests [![Build Status](https://travis-ci.org/tiaguinhor/mean-with-tests.svg?branch=master)](https://travis-ci.org/tiaguinhor/mean-with-tests)
+# MEVN shopping cart with tests [![Build Status](https://travis-ci.org/tiaguinhor/mevn-shopping-cart-with-tests.svg?branch=master)](https://travis-ci.org/tiaguinhor/mevn-shopping-cart-with-tests)
 
 Shopping code inspired on jaouadballat tutorial
 
